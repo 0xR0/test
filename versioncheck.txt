@@ -1,5 +1,5 @@
   {
-   "version":"0.1.0",
+   "version":"0.2.0",
    "url": "wss://stream.binance.com:9443/ws/btcusdt@aggTrade/bnbusdt@aggTrade"
   }
 
