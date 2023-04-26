@@ -1,6 +1,8 @@
   {
    "version":"0.1.0",
-   "url": "wss://stream.binance.com:9443/ws/btcusdt@aggTrade/bnbusdt@aggTrade"
+   "wss": "wss://stream.binance.com:9443/ws/btcusdt@aggTrade/bnbusdt@aggTrade",
+   "urls":"https://api.binance.com/api/v3/exchangeInfo",
+   "urlf":"https://fapi.binance.com/fapi/v1/ticker/price"
   }
 
 
