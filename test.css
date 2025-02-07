@@ -1,0 +1,269 @@
+/* Base Variables */
+:root {
+    --primary: #2196F3;
+    --success: #4CAF50;
+    --danger: #F44336;
+    --background: #2f3136;
+    --surface: #1E1E1E;
+    --text: #FFFFFF;
+    --card-bg: linear-gradient(145deg, #23252a, #1e1f23);
+    --border-color: rgba(255,255,255,0.05);
+    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    --hover-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* CSS Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Container Styles */
+.glass-container {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 2rem);
+    width: min(100%, 1200px);
+    margin: 0 auto;
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+/* Grid Layout System */
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.grid-5 { grid-template-columns: repeat(5, 1fr); }
+.grid-6 { grid-template-columns: repeat(6, 1fr); }
+
+/* Card Styles */
+.result-card {
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(4px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    margin-bottom: clamp(0.5rem, 2vw, 1rem);
+    overflow: hidden;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.card-content {
+    display: grid;
+    padding: clamp(0.75rem, 2vw, 1.5rem);
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+    align-items: center;
+}
+
+/* Content Layouts */
+.card-content-normal,
+.card-content-trades {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* Info Group Styles */
+.info-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+}
+
+.info-label {
+    font-size: clamp(0.75rem, 1.5vw, 0.85rem);
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.info-value {
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    font-weight: 600;
+    text-align: center;
+    word-break: break-word;
+}
+
+.symbol-value {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-weight: 700;
+}
+
+/* Header Styles */
+h1 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(45deg, var(--success), #8BC34A);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    white-space: normal;
+}
+
+/* Search Components */
+.search-container {
+    position: relative;
+    width: 100%;
+    max-width: min(400px, 90vw);
+}
+
+.search-input {
+    width: 100%;
+    padding: 1rem 1rem 1rem 3rem;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 15px;
+    color: var(--text);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    transition: all 0.3s ease;
+}
+
+/* Controls Container */
+.controls-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: clamp(1rem, 2vw, 2rem);
+    width: 100%;
+    margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Navigation Styles */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #202225;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+    z-index: 1000;
+    padding: clamp(0.5rem, 2vw, 1rem);
+}
+
+.main-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.nav-button {
+    background-color: #4f545c;
+    border: none;
+    color: white;
+    padding: clamp(0.75rem, 2vw, 1.25rem);
+    border-radius: 20px;
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: clamp(70px, 15vw, 120px);
+    text-align: center;
+    flex: 1;
+}
+
+/* Timeframe Components */
+.timeframe-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    padding: clamp(0.75rem, 2vw, 1rem);
+    gap: clamp(0.5rem, 1.5vw, 1rem);
+    align-items: center;
+}
+
+.timeframe-header {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    font-weight: 600;
+}
+
+/* Form Elements */
+.form-control, 
+.form-range {
+    width: 100%;
+    padding: clamp(0.5rem, 1.5vw, 0.75rem);
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--border-color);
+    color: var(--text);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+/* Utility Classes */
+.text-success { color: var(--success) !important; }
+.text-danger { color: var(--danger) !important; }
+.text-white { color: var(--text) !important; }
+
+/* Flex Utilities */
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.items-center { align-items: center; }
+.justify-center { justify-content: center; }
+.flex-wrap { flex-wrap: wrap; }
+.gap-1 { gap: 0.5rem; }
+.gap-2 { gap: 1rem; }
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.highlight-row {
+    animation: pulse 2s infinite;
+}
+
+/* Large Screen Optimizations */
+@media (min-width: 1200px) {
+    .glass-container {
+        padding: 2rem 4rem;
+    }
+
+    .card-content-normal,
+    .card-content-trades {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* Print Styles */
+@media print {
+    .bottom-nav,
+    .search-container,
+    .controls-container {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .result-card {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+    }
+}
